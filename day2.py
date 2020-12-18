@@ -5,12 +5,13 @@ import re
 def reader():
     with open("inputs/day2.txt", "r") as f:
         for line in f.readlines():
-            m = re.match(r"^(?P<min>\d+)-(?P<max>\d+)\s(?P<letter>\w):\s(?P<password>\w+)$", line)
+            m = re.match(
+                r"^(?P<min>\d+)-(?P<max>\d+)\s(?P<letter>\w):\s(?P<password>\w+)$", line
+            )
             if m:
                 yield m.groupdict()
             else:
                 raise ValueError(f"Could not match {line}")
-
 
 
 def part1():

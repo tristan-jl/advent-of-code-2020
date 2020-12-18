@@ -47,11 +47,14 @@ def part2():
                         and (2010 <= int(d["iyr"]) <= 2020)
                         and (2020 <= int(d["eyr"]) <= 2030)
                         and (
-                            m[2] == "cm" and 150 <= int(m[1]) <= 193
-                            or m[2] == "in" and 59 <= int(m[1]) <= 76
+                            m[2] == "cm"
+                            and 150 <= int(m[1]) <= 193
+                            or m[2] == "in"
+                            and 59 <= int(m[1]) <= 76
                         )
                         and re.match("^#[a-f0-9]{6}$", d["hcl"])
-                        and d["ecl"] in {"amb", "blu", "brn", "gry", "grn", "hzl", "oth"}
+                        and d["ecl"]
+                        in {"amb", "blu", "brn", "gry", "grn", "hzl", "oth"}
                         and re.match("^[0-9]{9}$", d["pid"])
                     ):
                         count += 1
